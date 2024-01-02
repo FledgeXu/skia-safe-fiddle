@@ -1,8 +1,8 @@
-use skia_safe::Canvas;
+use skia_safe::{scalar, Canvas};
 pub const WINDOWS_WIDTH: i32 = 800;
 pub const WINDOWS_HEIGHT: i32 = 800;
 #[cfg(all(target_os = "macos", feature = "metal"))]
-pub fn init_window<F>(draw_fn: F)
+pub fn init_window<F>(scale_factor: (scalar, scalar), draw_fn: F)
 where
     F: Fn(&Canvas),
 {
@@ -16,7 +16,7 @@ where
     use objc::rc::autoreleasepool;
     use skia_safe::{
         gpu::{self, mtl, BackendRenderTarget, DirectContext, SurfaceOrigin},
-        scalar, Color, ColorType, Size,
+        Color, ColorType, Size,
     };
     use winit::{
         dpi::LogicalSize,
@@ -79,7 +79,7 @@ where
                         WindowEvent::CloseRequested => window_target.exit(),
                         WindowEvent::Resized(size) => {
                             metal_layer.set_drawable_size(CGSize::new(
-                                size.height as f64,
+                                size.width as f64,
                                 size.height as f64,
                             ));
                             window.request_redraw();
@@ -109,9 +109,12 @@ where
                                     .unwrap()
                                 };
 
+                                // Draw entry
                                 surface.canvas().clear(Color::WHITE);
+                                surface.canvas().scale(scale_factor);
                                 draw_fn(surface.canvas());
                                 context.flush_and_submit();
+
                                 drop(surface);
 
                                 let command_buffer = command_queue.new_command_buffer();
