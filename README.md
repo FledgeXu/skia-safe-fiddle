@@ -2,7 +2,7 @@ It's a rust portal of the Skia fiddle.
 ## TODO
 | Fiddle | Finished |
 |--------| -------- |
-|50_percent_gray| :white_large_square: |
+|50_percent_gray| :white_check_mark: |
 |50_percent_srgb| :white_large_square: |
 |Alpha_Constants_a| :white_large_square: |
 |Alpha_Constants_b| :white_large_square: |
