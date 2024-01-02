@@ -1,6 +1,6 @@
 use skia_safe::Canvas;
 fn main() {
-    skia_safe_fiddle::init_window(draw);
+    skia_safe_fiddle::init_window((3.0, 3.0), draw);
 }
 fn draw(canvas: &Canvas) {
     use skia_safe::{Color, Paint, Point};
