@@ -1,11 +1,10 @@
-use skia_safe::Canvas;
+use skia_safe::{Canvas, Color, Paint, Point};
+
 fn main() {
     skia_safe_fiddle::init_window((3.0, 3.0), draw);
 }
-fn draw(canvas: &Canvas) {
-    use skia_safe::{Color, Paint, Point};
 
-    // Code Start:
+fn draw(canvas: &Canvas) {
     let mut paint = Paint::default();
     paint.set_anti_alias(true);
     canvas.draw_circle(Point::new(128.0, 128.0), 90.0, &paint);
