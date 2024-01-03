@@ -35,11 +35,11 @@ fn draw(canvas: &Canvas) {
     canvas.draw_rect(r, &p);
     p.set_shader(None);
 
-    p.set_color(Color::from_argb(0xff, 0x80, 0x80, 0x80));
+    p.set_color(Color::new(0xff808080));
     canvas.translate(Vector::new(100.0, 0.0));
     canvas.draw_rect(r, &p);
 
-    p.set_color(Color::from_argb(0x80, 0x00, 0x00, 0x00));
+    p.set_color(Color::new(0x80000000));
     canvas.translate(Vector::new(100.0, 0.0));
     canvas.draw_rect(r, &p);
 }

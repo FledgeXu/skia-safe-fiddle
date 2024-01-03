@@ -43,20 +43,20 @@ fn draw(canvas: &Canvas) {
 
     // Blend black on to white
     canvas.translate(Vector::new(105.0, 0.0));
-    p.set_color(Color::from_argb(0x80, 0x00, 0x00, 0x00));
+    p.set_color(Color::new(0x80000000));
     p.set_shader(None);
     canvas.draw_rect(Rect::new(0.0, 0.0, 100.0, 100.0), &p);
     canvas.draw_str("Blend", Point::new(0.0, 125.0), &font, &balck);
 
     // Opaque color (0xFFBCBCBC)
     canvas.translate(Vector::new(105.0, 0.0));
-    p.set_color(Color::from_argb(0xFF, 0xBC, 0xBC, 0xBC));
+    p.set_color(Color::new(0xFFBCBCBC));
     canvas.draw_rect(Rect::new(0.0, 0.0, 100.0, 100.0), &p);
     canvas.draw_str("0xFFBCBCBC", Point::new(0.0, 125.0), &font, &balck);
 
     // Opaque color (0xFF808080)
     canvas.translate(Vector::new(105.0, 0.0));
-    p.set_color(Color::from_argb(0xFF, 0x80, 0x80, 0x80));
+    p.set_color(Color::new(0xFF808080));
     canvas.draw_rect(Rect::new(0.0, 0.0, 100.0, 100.0), &p);
     canvas.draw_str("0xFF808080", Point::new(0.0, 125.0), &font, &balck);
 }

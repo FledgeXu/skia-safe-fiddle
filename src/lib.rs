@@ -134,3 +134,27 @@ where
 pub fn init_window() {
     println!("it's windows only");
 }
+
+pub mod resources {
+    use skia_safe::{Bitmap, Data, Image};
+
+    fn load_image(bytes: &[u8]) -> Image {
+        let data = Data::new_copy(bytes);
+        Image::from_encoded(data).unwrap()
+    }
+
+    pub fn example1() -> Image {
+        load_image(include_bytes!("resources/example_1.png"))
+    }
+
+    pub fn example2() -> Image {
+        load_image(include_bytes!("resources/example_2.png"))
+    }
+
+    pub fn example3() -> Image {
+        load_image(include_bytes!("resources/example_3.png"))
+    }
+    pub fn source() -> Bitmap {
+        Bitmap::default()
+    }
+}
