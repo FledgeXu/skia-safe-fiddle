@@ -1,6 +1,7 @@
 It's a rust portal of the Skia fiddle.
 ## Play with it
 **For now this project only supports macOS with the metal backend.**
+
 To play with it, just run something like this:
 ```bash
 cargo run --example <exmaple_name> --features metal
