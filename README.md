@@ -100,7 +100,7 @@ It's a rust portal of the Skia fiddle.
 |Canvas_accessTopLayerPixels_a| :white_large_square: |
 |Canvas_accessTopLayerPixels_b| :white_large_square: |
 |Canvas_accessTopRasterHandle| :white_large_square: |
-|Canvas_clear| :white_large_square: |
+|Canvas_clear| :white_check_mark: |
 |Canvas_clipPath| :white_large_square: |
 |Canvas_clipPath_2| :white_large_square: |
 |Canvas_clipPath_3| :white_large_square: |
@@ -194,7 +194,7 @@ It's a rust portal of the Skia fiddle.
 |Canvas_resetMatrix| :white_large_square: |
 |Canvas_restore| :white_large_square: |
 |Canvas_restoreToCount| :white_large_square: |
-|Canvas_rotate| :white_large_square: |
+|Canvas_rotate| :white_check_mark: |
 |Canvas_rotate_2| :white_large_square: |
 |Canvas_save| :white_large_square: |
 |Canvas_saveLayer| :white_large_square: |
