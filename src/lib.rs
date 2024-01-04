@@ -1,6 +1,8 @@
 use skia_safe::{scalar, Canvas};
+
 pub const WINDOWS_WIDTH: i32 = 800;
 pub const WINDOWS_HEIGHT: i32 = 800;
+
 #[cfg(all(target_os = "macos", feature = "metal"))]
 pub fn init_window<F>(scale_factor: (scalar, scalar), draw_fn: F)
 where
@@ -26,6 +28,7 @@ where
         window::WindowBuilder,
     };
 
+    // Prepare to create a macOS window.
     let size = LogicalSize::new(WINDOWS_WIDTH, WINDOWS_HEIGHT);
 
     let event_loop = EventLoop::new().expect("Failed to create event loop");
@@ -39,6 +42,8 @@ where
         .expect("Failed to retrieve a window handle");
     let raw_window_handle = window_handle.as_raw();
 
+    // Create a CAMetalLayer.
+    // More about CAMetalLayer: https://developer.apple.com/documentation/quartzcore/cametallayer
     let device = Device::system_default().expect("Not found Device(usually a CPU).");
     let metal_layer = {
         let draw_size = window.inner_size();
@@ -62,6 +67,7 @@ where
 
     let command_queue = device.new_command_queue();
 
+    // Set up metal backend.
     let backend = unsafe {
         mtl::BackendContext::new(
             device.as_ptr() as mtl::Handle,
@@ -70,6 +76,7 @@ where
         )
     };
 
+    // Start the window.
     let mut context = DirectContext::new_metal(&backend, None).unwrap();
     event_loop
         .run(move |event, window_target| {
