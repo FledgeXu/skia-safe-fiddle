@@ -1,5 +1,12 @@
 It's a rust portal of the Skia fiddle.
-## TODO
+## Play with it
+**For now this project only supports macOS with the metal backend.**
+To play with it, just run something like this:
+```bash
+cargo run --example <exmaple_name> --features metal
+```
+To know exmaples, just check the `examples` folder.
+## Status
 | Fiddle | Finished |
 |--------| -------- |
 |50_percent_gray| :white_check_mark: |
