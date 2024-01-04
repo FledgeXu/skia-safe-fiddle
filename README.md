@@ -994,7 +994,7 @@ It's a rust portal of the Skia fiddle.
 |setimagefilter| :white_large_square: |
 |shader| :white_large_square: |
 |shader_alphaimage| :white_large_square: |
-|shapes| :white_large_square: |
+|shapes| :white_check_mark: |
 |shapes_with_motion| :white_large_square: |
 |skbug6031| :white_large_square: |
 |skbug_237_drawImageRect| :white_large_square: |
