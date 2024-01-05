@@ -1031,7 +1031,7 @@ To know exmaples, just check the `examples` folder.
 |skpaint_path_2d_path_effect| :white_large_square: |
 |skpaint_perlin| :white_large_square: |
 |skpaint_radial| :white_large_square: |
-|skpaint_shader| :white_large_square: |
+|skpaint_shader| :white_check_mark: |
 |skpaint_skia| :white_large_square: |
 |skpaint_sum_path_effect| :white_large_square: |
 |skpaint_sweep| :white_large_square: |

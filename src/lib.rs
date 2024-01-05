@@ -1,7 +1,7 @@
 use skia_safe::{scalar, Canvas};
 
-pub const WINDOWS_WIDTH: i32 = 800;
-pub const WINDOWS_HEIGHT: i32 = 800;
+pub const WINDOWS_WIDTH: i32 = 768;
+pub const WINDOWS_HEIGHT: i32 = 768;
 
 #[cfg(all(target_os = "macos", feature = "metal"))]
 pub fn init_window<F>(scale_factor: (scalar, scalar), draw_fn: F)
