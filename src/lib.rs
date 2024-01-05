@@ -51,6 +51,10 @@ where
         layer.set_device(&device);
         layer.set_pixel_format(MTLPixelFormat::BGRA8Unorm);
         layer.set_presents_with_transaction(false);
+        // Allows blending
+        // More about: https://developer.apple.com/documentation/quartzcore/cametallayer/1478168-framebufferonly
+        layer.set_framebuffer_only(false);
+
         unsafe {
             let view = match raw_window_handle {
                 winit::raw_window_handle::RawWindowHandle::AppKit(appkit) => {
@@ -62,9 +66,6 @@ where
             view.setLayer(layer.as_ref() as *const _ as _);
         }
         layer.set_drawable_size(CGSize::new(draw_size.width as f64, draw_size.height as f64));
-        // Allows blending
-        // More about: https://developer.apple.com/documentation/quartzcore/cametallayer/1478168-framebufferonly?language=objc
-        layer.set_framebuffer_only(false);
         layer
     };
 
