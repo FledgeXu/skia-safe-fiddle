@@ -944,7 +944,7 @@ To know exmaples, just check the `examples` folder.
 |crbug_663246| :white_large_square: |
 |crbug_918512| :white_large_square: |
 |cubics_are_horrible| :white_large_square: |
-|default| :white_large_square: |
+|default| :white_check_mark: |
 |default2| :white_large_square: |
 |default3| :white_large_square: |
 |discrete_path| :white_large_square: |
