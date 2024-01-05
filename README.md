@@ -924,7 +924,7 @@ To know exmaples, just check the `examples` folder.
 |alpha_bitmap_color_filter_mask_filter| :white_large_square: |
 |alphaimage_shader_colorfilter| :white_large_square: |
 |backdrop_blur_with_rrect_clip| :white_large_square: |
-|bezier_curves| :white_large_square: |
+|bezier_curves| :white_check_mark: |
 |blur4444| :white_large_square: |
 |blur_alpha_img| :white_large_square: |
 |blurbug| :white_large_square: |
