@@ -62,6 +62,9 @@ where
             view.setLayer(layer.as_ref() as *const _ as _);
         }
         layer.set_drawable_size(CGSize::new(draw_size.width as f64, draw_size.height as f64));
+        // Allows blending
+        // More about: https://developer.apple.com/documentation/quartzcore/cametallayer/1478168-framebufferonly?language=objc
+        layer.set_framebuffer_only(false);
         layer
     };
 
