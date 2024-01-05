@@ -1,6 +1,6 @@
 use skia_safe::{
-    surfaces, Canvas, Color, FilterMode, Font, ISize, Paint, Point, Rect, SamplingOptions, Shader,
-    TileMode, Typeface, Vector,
+    surfaces, Canvas, Color, FilterMode, Font, ISize, Paint, Rect, SamplingOptions, Shader,
+    TileMode, Typeface,
 };
 
 fn main() {
@@ -26,37 +26,37 @@ fn draw(canvas: &Canvas) {
     let font = Font::new(Typeface::default(), 12.0);
 
     // BW Dither
-    canvas.translate(Vector::new(5.0, 5.0));
+    canvas.translate((5.0, 5.0));
     let mut p = Paint::default();
     p.set_shader(make_bw_dither());
     canvas.draw_rect(Rect::new(0.0, 0.0, 100.0, 100.0), &p);
     let balck = Paint::default();
-    canvas.draw_str("BW Dither", Point::new(0.0, 125.0), &font, &balck);
+    canvas.draw_str("BW Dither", (0.0, 125.0), &font, &balck);
 
     // Scaled BW Dither
-    canvas.translate(Vector::new(105.0, 0.0));
+    canvas.translate((105.0, 0.0));
     canvas.save();
     canvas.scale((0.5, 0.5));
     canvas.draw_rect(Rect::new(0.0, 0.0, 200.0, 200.0), &p);
     canvas.restore();
-    canvas.draw_str("Scaled Dither", Point::new(0.0, 125.0), &font, &balck);
+    canvas.draw_str("Scaled Dither", (0.0, 125.0), &font, &balck);
 
     // Blend black on to white
-    canvas.translate(Vector::new(105.0, 0.0));
+    canvas.translate((105.0, 0.0));
     p.set_color(Color::new(0x80000000));
     p.set_shader(None);
     canvas.draw_rect(Rect::new(0.0, 0.0, 100.0, 100.0), &p);
-    canvas.draw_str("Blend", Point::new(0.0, 125.0), &font, &balck);
+    canvas.draw_str("Blend", (0.0, 125.0), &font, &balck);
 
     // Opaque color (0xFFBCBCBC)
-    canvas.translate(Vector::new(105.0, 0.0));
+    canvas.translate((105.0, 0.0));
     p.set_color(Color::new(0xFFBCBCBC));
     canvas.draw_rect(Rect::new(0.0, 0.0, 100.0, 100.0), &p);
-    canvas.draw_str("0xFFBCBCBC", Point::new(0.0, 125.0), &font, &balck);
+    canvas.draw_str("0xFFBCBCBC", (0.0, 125.0), &font, &balck);
 
     // Opaque color (0xFF808080)
-    canvas.translate(Vector::new(105.0, 0.0));
+    canvas.translate((105.0, 0.0));
     p.set_color(Color::new(0xFF808080));
     canvas.draw_rect(Rect::new(0.0, 0.0, 100.0, 100.0), &p);
-    canvas.draw_str("0xFF808080", Point::new(0.0, 125.0), &font, &balck);
+    canvas.draw_str("0xFF808080", (0.0, 125.0), &font, &balck);
 }

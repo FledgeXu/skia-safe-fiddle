@@ -1,4 +1,4 @@
-use skia_safe::{BlendMode, Canvas, Point};
+use skia_safe::{BlendMode, Canvas};
 use skia_safe_fiddle::resources;
 
 fn main() {
@@ -7,6 +7,6 @@ fn main() {
 
 fn draw(canvas: &Canvas) {
     let image = resources::example3();
-    canvas.draw_image(&image, Point::new(0.0, 0.0), None);
+    canvas.draw_image(&image, (0.0, 0.0), None);
     canvas.draw_color(0xFF00FF00, BlendMode::Hue);
 }

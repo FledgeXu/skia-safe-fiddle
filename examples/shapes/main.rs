@@ -1,4 +1,4 @@
-use skia_safe::{Canvas, Color, Paint, PaintStyle, Point, RRect, Rect, Vector};
+use skia_safe::{Canvas, Color, Paint, PaintStyle, RRect, Rect};
 
 fn main() {
     skia_safe_fiddle::init_window((5.0, 5.0), draw);
@@ -17,14 +17,14 @@ fn draw(canvas: &Canvas) {
 
     let mut oval = RRect::default();
     oval.set_oval(rect);
-    oval.offset(Vector::new(40.0, 80.0));
+    oval.offset((40.0, 80.0));
     paint.set_color(0xFFDB4437);
     canvas.draw_rrect(&oval, &paint);
 
     paint.set_color(0xFF0F9D58);
-    canvas.draw_circle(Point::new(180.0, 50.0), 25.0, &paint);
+    canvas.draw_circle((180.0, 50.0), 25.0, &paint);
 
-    rect.offset(Vector::new(80.0, 50.0));
+    rect.offset((80.0, 50.0));
     paint.set_color(0xFFF4B400);
     paint.set_style(PaintStyle::Stroke);
     canvas.draw_round_rect(rect, 10.0, 10.0, &paint);

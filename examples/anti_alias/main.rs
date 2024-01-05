@@ -1,4 +1,4 @@
-use skia_safe::{Bitmap, Canvas, Color, Paint, PaintStyle, Point, Vector};
+use skia_safe::{Bitmap, Canvas, Color, Paint, PaintStyle};
 
 fn main() {
     skia_safe_fiddle::init_window((3.0, 3.0), draw);
@@ -15,20 +15,16 @@ fn draw(canvas: &Canvas) {
         paint.set_color(if antialias { Color::RED } else { Color::BLUE });
         paint.set_anti_alias(antialias);
         bitmap.erase_color(Color::TRANSPARENT);
-        offscreen.draw_line(Point::new(5.0, 5.0), Point::new(15.0, 30.0), &paint);
-        canvas.draw_line(Point::new(5.0, 5.0), Point::new(15.0, 30.0), &paint);
+        offscreen.draw_line((5.0, 5.0), (15.0, 30.0), &paint);
+        canvas.draw_line((5.0, 5.0), (15.0, 30.0), &paint);
         canvas.save();
         canvas.scale((10.0, 10.0));
         canvas.draw_image(
             &bitmap.as_image(),
-            if antialias {
-                Point::new(12.0, 0.0)
-            } else {
-                Point::new(0.0, 0.0)
-            },
+            if antialias { (12.0, 0.0) } else { (0.0, 0.0) },
             None,
         );
         canvas.restore();
-        canvas.translate(Vector::new(15.0, 0.0));
+        canvas.translate((15.0, 0.0));
     }
 }
