@@ -14,7 +14,7 @@ To know exmaples, just check the `examples` folder.
 |50_percent_srgb| :white_check_mark: |
 |Alpha_Constants_a| :white_large_square: |
 |Alpha_Constants_b| :white_large_square: |
-|Anti_Alias| :white_large_square: |
+|Anti_Alias| :white_check_mark: |
 |AutoCanvasRestore_SkCanvas_star| :white_large_square: |
 |AutoCanvasRestore_restore| :white_large_square: |
 |Bitmap_012| :white_large_square: |
