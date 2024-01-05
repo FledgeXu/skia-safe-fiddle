@@ -271,7 +271,7 @@ To know exmaples, just check the `examples` folder.
 |HSVToColor| :white_large_square: |
 |HSVToColor_2| :white_large_square: |
 |Hard_Light| :white_large_square: |
-|Hue| :white_large_square: |
+|Hue| :white_check_mark: |
 |IPoint_Make| :white_large_square: |
 |IPoint_add_operator| :white_large_square: |
 |IPoint_addto_operator| :white_large_square: |

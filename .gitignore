@@ -1,2 +1,4 @@
 /target
 .nvim.lua
+test.png
+examples/test/
